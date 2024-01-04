@@ -53,7 +53,7 @@ module Mongoid
       #
       # @return [Integer] current page
       def current_page
-        (opts[:page] || 1).to_i
+        (criteria.options[:page] || 1).to_i
       end
     end
   end
