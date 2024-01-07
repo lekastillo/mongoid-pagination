@@ -1,8 +1,7 @@
 require 'mongoid'
-require 'mongoid/helpers/pagination_helper'
 require 'mongoid/pagination'
 
-if defined? ::Rails::Railtie
-    require 'mongoid/engine'
+ActiveSupport.on_load :action_view do
+    require 'mongoid/helpers/pagination_helper'
+    ::ActionView::Base.send :include, Mongoid::Helpers::PaginationHelper
 end
-  
