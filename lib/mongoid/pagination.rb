@@ -56,5 +56,7 @@ module Mongoid
         (criteria.options[:page] || 1).to_i
       end
     end
+    class Engine < Rails::Engine
+    end
   end
 end
