@@ -94,7 +94,7 @@ module Mongoid
         # binding.pry
         options[:total_pages] ||= scope.total_pages
         # options.reverse_merge! current_page: scope.current_page, per_page: 25, remote: false
-        options.reverse_merge! current_page: params[:page].to_i, per_page: 25, remote: false
+        options.reverse_merge! current_page: params[:page].to_i || 1, per_page: 25, remote: false
 
         paginator = paginator_class.new (template || self), **options
         paginator.to_s
