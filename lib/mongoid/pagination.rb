@@ -48,6 +48,15 @@ module Mongoid
         limit = criteria.options[:limit] || DEFAULT_PAGE_LIMIT
         (criteria.count / limit) + (criteria.count % limit)
       end
+      
+      # Get current page
+      #
+      # @return [Integer] current page
+      def current_page
+        (criteria.options[:page] || 1).to_i
+      end
+    end
+    class Engine < Rails::Engine
     end
   end
 end
