@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/inflector'
-
-# frozen_string_literal: true
+require 'mongoid/helpers/link_tag'
 module Mongoid
   module Helpers
 
